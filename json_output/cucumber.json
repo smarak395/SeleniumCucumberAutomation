@@ -1,0 +1,154 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2045686456,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.setUp()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": ": Automation Practice Login Test Scenario",
+        "description": "",
+        "id": "loginfeature;:-automation-practice-login-test-scenario;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 114323397,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 9052743969,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is already on Login Page",
+            "match": {
+              "location": "LoginDefination.user_is_already_on_Login_Page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 116015857,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "title of login page is My Store",
+            "match": {
+              "location": "LoginDefination.title_of_login_page_is_My_Store()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3058494577,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks on the header signIn link",
+            "match": {
+              "location": "LoginDefination.user_clicks_on_the_header_signIn_link()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 397578280,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters \"smarakuniversum@gmail.com\" and \"hello\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "smarakuniversum@gmail.com",
+                  "offset": 13
+                },
+                {
+                  "val": "hello",
+                  "offset": 45
+                }
+              ],
+              "location": "LoginDefination.user_enters_and(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2232755114,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks on signIn button",
+            "match": {
+              "location": "LoginDefination.user_clicks_on_signIn_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 37998840,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user is on My Account page",
+            "match": {
+              "location": "LoginDefination.user_is_on_My_Account_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3904141207,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user clicks on signOut button",
+            "match": {
+              "location": "LoginDefination.user_clicks_on_signOut_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 29603074,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user should be signedOut from the application",
+            "match": {
+              "location": "LoginDefination.user_should_be_signedOut_from_the_application()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "LoginFeature",
+    "description": "This feature deals with the login functionality of the application",
+    "id": "loginfeature",
+    "keyword": "Feature",
+    "uri": "Login.feature"
+  }
+]
