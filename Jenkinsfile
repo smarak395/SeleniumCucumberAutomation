@@ -11,7 +11,7 @@ stages
      {
 
         steps  {
-                withMaven(maven: 'maven_3_6_1')
+                withMaven(maven: 'maven_3_8_1')
                     {
                         sh 'mvn clean install'
                     }
