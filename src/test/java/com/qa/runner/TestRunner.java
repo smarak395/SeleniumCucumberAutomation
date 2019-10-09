@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
         features ="/Users/smarakdas/Documents/MySpace/MyJProject/SeleniumCucumberAutomation/src/test/java/com/qa/features",//the path of the feature files
         glue={"com/qa/stepDefinations"}, //the path of the step definition files
-        plugin= {"pretty","html:test-output", "json:json_output/cucumber.json", "junit:junit_xml/cucumber.xml"}, //to generate different types of reporting
+        plugin= {"pretty","html:target/test-output", "json:target/json_output/cucumber.json", "junit:target/junit_xml/cucumber.xml"}, //to generate different types of reporting
         monochrome = true, //display the console output in a proper readable format
         strict = true, //it will check if any step is not defined in step definition file
         dryRun = false //to check the mapping is proper between feature file and step def file
