@@ -1,48 +1,44 @@
-pipeline
+pipeline {
+    agent any
 
-{
+    stages {
+        stage ('Compile Stage') {
 
-agent any
+            steps {
+                withMaven(maven : 'maven_3_8_1') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
 
-stages
-{
+        stage ('Testing Stage') {
 
-   stage('Compile stage')
-     {
+            steps {
+                withMaven(maven : 'maven_3_8_1') {
+                    sh 'mvn test'
+                }
+            }
+        }
 
-        steps  {
-                withMaven(maven: 'maven_3_8_1')
-                    {
-                        sh 'mvn clean install'
-                    }
-               }
-     }
+        stage ('Cucumber Reports') {
 
-
-
-   stage('Test stage')
-     {
-
-        steps  {
-                withMaven(maven: 'maven_3_8_1')
-                    {
-                        sh 'mvn test -DskipTests=false'
-                    }
-               }
-     }
-
-
-
-   stage('Cucumber Reports')
-     {
-
-        steps  {
+            steps {
                 cucumber buildStatus: "UNSTABLE",
                 fileIncludePattern: "**/cucumber.json",
                 jsonReportDirectory:'target'
-               }
-     }
+                }
+            }
 
+
+        stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'maven_3_8_1') {
+                    sh 'mvn deploy'
+                }
+            }
+        }
+    }
 }
 
-}
+
+
