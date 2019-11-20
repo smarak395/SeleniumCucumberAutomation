@@ -26,7 +26,6 @@ public class LoginDefination extends TestBase {
         loginPage.clickSignInHeaderLink();
     }
 
-
     @Then("^user enters \"([^\"]*)\" and \"([^\"]*)\"$")
     public void user_enters_and(String userName, String password) {
         loginPage.enterLoginCredential(userName, password);
@@ -36,7 +35,6 @@ public class LoginDefination extends TestBase {
     public void user_clicks_on_signIn_button() {
         loginPage.clickSignIn();
     }
-
 
     @Then("^user is on My Account page$")
     public void user_is_on_My_Account_page() {

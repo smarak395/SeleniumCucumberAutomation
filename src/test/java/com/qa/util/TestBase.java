@@ -5,11 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.FileInputStream;
 import java.util.NoSuchElementException;
 import java.util.Properties;
@@ -22,12 +20,9 @@ public class TestBase {
 
     public TestBase() {
         try {
-            PageFactory.initElements(driver, this);
-
             prop = new Properties();
-            FileInputStream fis = new FileInputStream("/Users/smarakdas/Documents/MySpace/MyJProject/SeleniumCucumberAutomation" +
-                    "/src/test/java/com/qa/config/config.properties");
-            prop.load(fis);
+            FileInputStream fIs = new FileInputStream("src/test/java/com/qa/config/config.properties");
+            prop.load(fIs);
 
         } catch (Exception ex) {
             ex.getMessage();
@@ -37,18 +32,16 @@ public class TestBase {
     public static void initialization() {
         String browser = prop.getProperty("browser");
         if (browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "/Users/smarakdas/Documents/MySpace/drivers/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
             driver = new ChromeDriver();
         } else if (browser.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "/Users/smarakdas/Documents/MySpace/drivers/geckodriver");
+            System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
             driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-
-        //driver.get(prop.getProperty("url"));
     }
 
     public void waitForPageToLoad() {
